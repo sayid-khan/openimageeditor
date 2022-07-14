@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, gray, rgba(255, 255, 255, 0.671));
+}
+
+.container {
+    width: 850px;
+    background: rgba(218, 211, 203, 0.438);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.575);
+    border-radius: 10px;
+    padding: 30px 35px 35px;
+}
+
+
+/* t disable the filters options before the photo is selected  */
+.container.disable :where(.editor, .reset-filter, .save-img) {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+
+
+.container h1 {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.container .wrapper {
+    display: flex;
+    margin: 20px 0;
+    min-height: 335px;
+}
+
+.wrapper .editor {
+    width: 280px;
+    border: 1px solid rgba(32, 32, 31, 0.596);
+    padding: 15px 20px;
+    border-radius: 3px;
+}
+
+
+.editor .title {
+    display: block;
+    font-size: 18px;
+    margin: 12px;
+}
+
+
+.editor .options,
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.editor button {
+    height: 40px;
+    font-size: 14px;
+    background-color: rgb(177, 168, 177);
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+
+.editor .filter button {
+    cursor: pointer;
+    width: calc(100% / 2 - 4px);
+}
+
+.editor button:hover {
+    background: rgb(199, 193, 199);
+}
+
+.filter button.active {
+    background: rgb(129, 129, 201);
+    color: white;
+    border-color: rgb(104, 104, 224);
+}
+
+
+.editor .rotate button {
+    cursor: pointer;
+    width: calc(100% / 4 - 4px);
+}
+
+
+.filter .slider {
+    margin-top: 12px;
+}
+
+
+.filter .slider .filter-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #363333;
+    padding: 10px;
+    font-weight: 500;
+
+}
+
+
+.filter .slider input {
+    cursor: pointer;
+    width: 100%;
+    height: 5px;
+    accent-color: rgb(59, 59, 173);
+}
+
+
+.editor .rotate {
+    margin-top: 17px;
+}
+
+
+.wrapper .preview {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+
+.preview img {
+    max-width: 490px;
+    max-height: 335px;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.controls button {
+    cursor: pointer;
+    height: 40px;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 6px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+
+.controls .reset-filter {
+    background-color: rgb(180, 152, 152);
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.controls .save-img {
+    background-color: rgb(104, 104, 224);
+    font-weight: 600;
+}
+
+.controls .choose-img {
+    background-color: rgb(162, 162, 177);
+    font-weight: 600;
+}
+
+.reset button:hover {
+    background-color: rgb(235, 45, 45);
+}
+
+.row button:hover {
+    background-color: rgb(7, 0, 104);
+    color: aliceblue;
+}
+
+
+
+/* responsive codes for small devices */
+
+@media screen and (max-width: 760px) {
+    .container {
+        padding: 25px;
+    }
+
+    .container .wrapper {
+        flex-wrap: wrap-reverse;
+    }
+
+    .wrapper .editor {
+        width: 100%;
+    }
+
+    .wrapper .preview-img {
+        width: 100%;
+        margin: 0 0 15px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    .controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controls .row {
+        width: 100%;
+    }
+
+    .controls .row .save-img {
+        margin-left: 0px;
+    }
+}
